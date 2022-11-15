@@ -189,3 +189,4 @@ python3
 #CONVERT cert TO PEM
 sudo openssl x509 -in /etc/ssl/certs/ca-certificates.crt -inform DER -outform PEM -out /usr/share/nginx/ca-certificates.pem
 # exverto
+# exverto
