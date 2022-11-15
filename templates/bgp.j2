@@ -1,0 +1,28 @@
+
+# NAME: {{name}}
+# AS-{{peer_asn_number}} AS{{peer_asn_number}}
+
+
+
+protocol bgp AS{{name}}v4 {
+    local 44.190.41.1 as 6556 port 179;
+    neighbor {{peer_ip_address}} as {{peer_asn_number}} port 179;
+    multihop 255;
+
+    ipv4 {
+        import keep filtered;
+
+        import filter {
+            bgp_local_pref = 201;
+            honor_graceful_shutdown();
+            bgp_community.add((6556,515));
+            accept;
+        };
+
+        export filter {
+            accept_local();
+            if ((6556,1) ~ bgp_community) then accept;
+            reject;
+        };
+    };
+}

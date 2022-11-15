@@ -1,0 +1,177 @@
+
+<style>
+
+#ErrorPage  {
+    margin: 30px auto 0;
+    max-width: 800px;
+	height: 100%;
+	width: 100%;
+    padding: 20px;
+    overflow-y: auto;
+	color: #333;
+    font-family: Roboto,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    line-height: 1.42857;
+    text-rendering: optimizelegibility;
+	background: #fafafa none repeat scroll 0 0;
+	}
+
+
+.ErrorCode {
+	font-size: 92px;
+    font-weight: 200;
+    text-align: center;
+	}
+
+
+#ErrorPage .ErrorMessage,
+#ErrorPage  .ErrorStatus {
+    font-size: 24px;
+    text-align: center;
+}
+
+
+#ErrorPage .ErrorLinks {
+    color: #737373;
+    font-size: 18px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv='Refresh' content='2;url=/'> -->
+    <title>Page Not Found :(</title>
+    <style>
+      ::-moz-selection {
+        background: #b3d4fc;
+        text-shadow: none;
+      }
+
+      ::selection {
+        background: #b3d4fc;
+        text-shadow: none;
+      }
+
+      html {
+        padding: 30px 10px;
+        font-size: 20px;
+        line-height: 1.4;
+        color: #737373;
+        background: #f0f0f0;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
+
+      html,
+      input {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+
+      body {
+        max-width: 500px;
+        _width: 500px;
+        padding: 30px 20px 50px;
+        border: 1px solid #b3b3b3;
+        border-radius: 4px;
+        margin: 0 auto;
+        box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
+        background: #fcfcfc;
+      }
+
+      h1 {
+        margin: 0 10px;
+        font-size: 50px;
+        text-align: center;
+      }
+
+      h1 span {
+        color: #bbb;
+      }
+
+      h3 {
+        margin: 1.5em 0 0.5em;
+      }
+
+      p {
+        margin: 1em 0;
+      }
+
+      ul {
+        padding: 0 0 0 40px;
+        margin: 1em 0;
+      }
+
+      .container {
+        max-width: 380px;
+        _width: 380px;
+        margin: 0 auto;
+      }
+
+    
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <h1>404</h1>
+        <p>This page doesn't yet exist. Coming soon!</p>
+
+        <div id="application">
+
+              	<div id="ErrorPage">
+
+
+
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                      {% if messages %}
+                        <ul class=flashes>
+                        {% for category, message in messages %}
+                          <li class="{{ category }}">{{ message }}</li>
+                        {% endfor %}
+                        </ul>
+                      {% endif %}
+                    {% endwith %}
+
+              		<div class="ErrorCode">{{errorCODE}}</div>
+              		<div class="ErrorStatus">{{errorSTATUS}}</div>
+                      <div class="ErrorMessage">{{errorMESSAGE}}</div>
+              	</div> <!-- END ErrorPage -->
+
+
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+<!--
+       444444444       000000000            444444444
+      4::::::::4     00:::::::::00         4::::::::4
+     4:::::::::4   00:::::::::::::00      4:::::::::4
+    4::::44::::4  0:::::::000:::::::0    4::::44::::4
+   4::::4 4::::4  0::::::0   0::::::0   4::::4 4::::4
+  4::::4  4::::4  0:::::0     0:::::0  4::::4  4::::4
+ 4::::4   4::::4  0:::::0     0:::::0 4::::4   4::::4
+4::::444444::::4440:::::0 000 0:::::04::::444444::::444
+4::::::::::::::::40:::::0 000 0:::::04::::::::::::::::4
+4444444444:::::4440:::::0     0:::::04444444444:::::444
+          4::::4  0:::::0     0:::::0          4::::4
+          4::::4  0::::::0   0::::::0          4::::4
+          4::::4  0:::::::000:::::::0          4::::4
+        44::::::44 00:::::::::::::00         44::::::44
+        4::::::::4   00:::::::::00           4::::::::4
+        4444444444     000000000             4444444444
+  -->
+
+
+
+
+</div> <!-- END application -->
